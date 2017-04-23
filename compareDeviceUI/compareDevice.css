@@ -1,0 +1,53 @@
+body, html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.mainContent{
+    padding: 0px;
+
+}
+.contentBox{
+    height: calc(100% - 52px);
+}
+
+.navBarBox{
+    width: 100%;
+}
+
+.navbar{
+    margin-bottom: 0px;
+}
+
+.deviceListBox{
+    border: 2px solid ;
+    height: 100%;
+    padding:0px;
+
+}
+a{
+    text-decoration-line:none !important;
+}
+.subCategoria{
+    border: 2px solid red;
+}
+
+.deviceToCompareBox{
+    border: 2px solid ;
+    height: 100%;
+
+}
+
+.deviceSelected{
+    height: 70%;
+    background-color: #2aabd2;
+}
+.briefInfo{
+    height: 20%;
+    background-color: aquamarine;
+}
+
+.action{
+    height: 10%;
+    background-color: #23527c;
+}
