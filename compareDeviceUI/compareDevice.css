@@ -28,9 +28,7 @@ body, html {
 a{
     text-decoration-line:none !important;
 }
-.subCategoria{
-    border: 2px solid red;
-}
+
 
 .deviceToCompareBox{
     border: 2px solid ;
@@ -40,8 +38,43 @@ a{
 
 .deviceSelected{
     height: 70%;
-    background-color: #2aabd2;
+
 }
+.vsText{
+    text-align: center;
+    margin-top: 20%;
+}
+.deviceBox{
+    margin-top:10%;
+    height: 70%;
+}
+
+.panel-heading{
+    border: 0px !important;
+    background-color: transparent !important;
+}
+.panelDeviceBox{
+    height:100%;
+}
+.panelDevice{
+    text-align: center;
+    height: 80%;
+}
+
+.panelDevice > a{
+    border: 0px !important;
+    height: 100% !important;
+    margin: 0px !important;
+}
+.deviceImg{
+    height: 100% !important;
+}
+.panelFooterDevice{
+    height:calc(20% - 20px);
+    text-align: center;
+    font-size: 1.5em;
+}
+
 .briefInfo{
     height: 20%;
     background-color: aquamarine;

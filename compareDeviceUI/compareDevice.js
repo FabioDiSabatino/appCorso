@@ -9,7 +9,8 @@
             target: $('.bodySize')
         });
 
-        moduleDeviceList.initModule()
+        moduleDeviceList.initModule();
+        moduleDeviceSelected.initModule();
 
 
 

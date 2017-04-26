@@ -16,6 +16,8 @@
 
     <script type="text/javascript" src="data.js"></script>
     <script type="text/javascript" src="module/moduleDeviceList.js"></script>
+    <script type="text/javascript" src="module/moduleDeviceSelected.js"></script>
+
 
 
 
@@ -58,16 +60,66 @@
     </div>
 
     <div class="row contentBox">
+
         <div class="deviceListBox col-xs-4 ">
-
                 <ul class="deviceAccordion">
-
                 </ul>
 
-
         </div>
+
+
         <div class="deviceToCompareBox col-xs-8 ">
-            <div class="row deviceSelected"></div>
+
+            <div class="modal fade">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Attenzione </h5>
+                        </div>
+                        <div class="modal-body">
+                            Elimina uno dei due device già selezionati...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row deviceSelected">
+
+                <div class="col-xs-5 deviceBox">
+                    <div class="panel panel-default leftDeviceBox panelDeviceBox ">
+                        <div class="panel-heading ">
+                            <span class="glyphicon glyphicon-remove pull-right hidden" data-remove="left" aria-hidden="true"></span>
+                        </div>
+                        <div class="panel-body panelDevice empty">
+                            <a href="#" class="thumbnail ">
+                                <img class="deviceImg img-responsive" src="img/addDevice.png" alt="">
+                            </a>
+                        </div>
+                        <div class="panel-footer footerDevice panelFooterDevice"> </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xs-2 vsText"> <h3><span class="label label-default">VS</span></h3></div>
+                <div class="col-xs-5 deviceBox">
+                    <div class="panel panel-default rightDeviceBox panelDeviceBox ">
+                        <div class="panel-heading ">
+                            <span class="glyphicon glyphicon-remove pull-right hidden" data-remove="right" aria-hidden="true"></span>
+                        </div>
+                        <div class="panel-body panelDevice empty">
+                            <a href="#" class="thumbnail">
+                                <img class="deviceImg" src="img/addDevice.png" alt="">
+                            </a>
+                        </div>
+                        <div class="panel-footer footerDevice panelFooterDevice "></div>
+                    </div>
+                </div>
+
+            </div>
+
             <div class="row briefInfo"></div>
             <div class="row action"></div>
         </div>

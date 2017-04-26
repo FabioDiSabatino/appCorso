@@ -46,7 +46,8 @@ var moduleDeviceList=(function () {
                 {
                     var contentSubCategoria=subCategorie.content_subCategoria[y];
                     var dataContentSubCategoria={
-                        nomeDevice:contentSubCategoria.nomeDevice
+                        nomeDevice:contentSubCategoria.nomeDevice,
+                        deviceImg:contentSubCategoria.imgDevice
                     }
                     var tpl3=Mustache.to_html(contentSubCategorieTpl[0], dataContentSubCategoria);
                     $subCategoria.append(tpl3);
@@ -64,6 +65,7 @@ var moduleDeviceList=(function () {
             active: false,
             heightStyle: "content"
         });
+        __setItemClickedListener();
 
     };
 
@@ -72,6 +74,18 @@ var moduleDeviceList=(function () {
         return $.get(urlTemplate);
 
     };
+
+    var __setItemClickedListener=function () {
+        
+        $('.deviceLabel').on("click",function () {
+
+            var imgURL=$(this).data('img');
+            var nome=$(this).text();
+            console.log(nome);
+            moduleDeviceSelected.setDeviceSelected(nome,imgURL);
+        })
+
+    }
 
 
     //------------------------------------public method----------------------------------------//

@@ -1,1 +1,1 @@
-<li class="deviceLabel">{{nomeDevice}}</li>
+<li><a href="#" class="deviceLabel" data-img="{{deviceImg}}">{{nomeDevice}}</a></li>

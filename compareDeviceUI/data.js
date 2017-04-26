@@ -12,7 +12,7 @@ var data ={
                     nomeSubCategoria:'HP',
                     content_subCategoria:[
                         {
-                            nomeDevice:"HP-DV732l"
+                            nomeDevice:"HP-DV732l",
                         },
                         {
                             nomeDevice:"HP-123LX"
@@ -44,7 +44,8 @@ var data ={
                     nomeSubCategoria:'Samsung',
                     content_subCategoria:[
                         {
-                            nomeDevice:"S7 EDGE"
+                            nomeDevice:"S7 EDGE",
+                            imgDevice:"img/s7edge.png"
                         },
                         {
                             nomeDevice:"S8 EDGE"
@@ -57,7 +58,9 @@ var data ={
                     nomeSubCategoria:'Apple',
                     content_subCategoria:[
                         {
-                            nomeDevice:"iPhone 7"
+                            nomeDevice:"iPhone 7",
+                            imgDevice:"img/iphone7.png"
+
                         },
                         {
                             nomeDevice:"iPhone 6s"
