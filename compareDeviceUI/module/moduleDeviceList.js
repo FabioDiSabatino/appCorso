@@ -57,9 +57,9 @@ var moduleDeviceList=(function () {
             }
         }
         $accordion.accordion({
-
             heightStyle: "fill"
         });
+
         $(".categoriaAccordion").accordion({
             collapsible:true,
             active: false,

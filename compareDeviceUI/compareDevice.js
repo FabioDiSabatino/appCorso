@@ -1,7 +1,4 @@
-/**
- * Created by fabiodisabatino on 22/04/17.
- */
-(function (metaData) {
+
     $(document).ready(function () {
 
         $('.mainContent').matchHeight({
@@ -17,8 +14,7 @@
 
 
 
-    })
+    });
 
 
 
-}());

@@ -1,0 +1,47 @@
+body{
+    background-color: #adadad;
+}
+.navbar{
+    margin-bottom: 0px;
+}
+
+.contentBox{
+
+}
+
+.welcomeImgBox{
+    padding: 0px;
+    background-color: black;
+
+
+}
+.welcome {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    width: 100%;
+    font-size: 4em;
+    color: white !important;
+}
+
+.welcomeImg{
+    width: 100%;
+    opacity: 0.6;
+}
+
+.keyBenifits{
+    border: 0px;
+    background-color: #adadad;
+
+}
+.keyBenifitsImg{
+    width: 70%;
+}
+
+@media screen and (max-width:728px) {
+
+    .welcome{
+        font-size: 2.5em;
+    }
+
+}
