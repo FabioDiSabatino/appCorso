@@ -2,7 +2,7 @@
  * Created by fabiodisabatino on 22/04/17.
  */
 
- var data ={
+ /* var data ={
     categorie:[
         {
             idCategoria:1,
@@ -125,4 +125,4 @@
 
 
 
-}
+} */

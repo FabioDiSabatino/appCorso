@@ -12,6 +12,8 @@ var moduleDeviceSelected=(function () {
     var __init=function () {
 
         $('.alert').alert('close');
+        __setRemoveDeviceListener();
+
     };
 
 
@@ -73,7 +75,6 @@ var moduleDeviceSelected=(function () {
             $('.modal').modal();
         }
 
-        __setRemoveDeviceListener();
 
     };
 

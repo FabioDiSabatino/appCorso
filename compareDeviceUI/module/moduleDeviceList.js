@@ -23,7 +23,7 @@ var moduleDeviceList=(function () {
 
     var __getData=function(){
 
-        var url="http://10.150.52.180:3000/categories";
+        var url="http://127.0.0.1/categories";
 
         return $.get(url);
 
@@ -35,7 +35,7 @@ var moduleDeviceList=(function () {
 
             var imgURL=$(this).data('img');
             var nome=$(this).text();
-            console.log(nome);
+
             moduleDeviceSelected.setDeviceSelected(nome,imgURL);
         })
 
@@ -43,67 +43,76 @@ var moduleDeviceList=(function () {
 
     var __init=function () {
 
-           $.when(__getData()).done(function (dati) {
+           $.when(__getData()).done(function (data) {
 
-               console.log(dati);
+               console.log(data);
+               var categories;
+               var $accordion=$('.deviceAccordion');
+
+
+               for (var i=0; i<data.length;i++)
+               {
+                   categories=data[i];
+                   var dataCategoria={
+                       nomeCategoria:categories.categoryname,
+                       idCategoria:categories.categoryid
+                   };
+
+                   console.log("category id: "+categories.categoryid);
+                   var tpl = Mustache.to_html(__categorieTpl[0], dataCategoria);
+                   $accordion.append(tpl);
+
+                   var $categoria=$accordion.find('.'+categories.categoryid);
+
+                   var subCategorie;
+                   for (var j=0;j<categories.brands.length;j++)
+                   {
+                        subCategorie=categories.brands[j];
+                        console.log(subCategorie);
+                       var dataSubCategoria={
+                           nomeSubCategoria:subCategorie.brandname,
+                           idSubCategoria:categories.categoryid+""+subCategorie.brandid
+                       };
+
+
+                       var tpl2=Mustache.to_html(__subCategorieTpl[0], dataSubCategoria);
+                       $categoria.append(tpl2);
+                       var $subCategoria=$categoria.find('.'+categories.categoryid+subCategorie.brandid);
+
+                       var contentSubCategoria;
+
+                       for (var z=0;z<subCategorie.devices.length;z++)
+                       {
+                           contentSubCategoria=subCategorie.devices[z];
+                           var dataContentSubCategoria={
+                               nomeDevice:contentSubCategoria.model,
+                               deviceImg:contentSubCategoria.imageurl
+                           };
+
+                           var tpl3=Mustache.to_html(__contentSubCategorieTpl[0], dataContentSubCategoria);
+                           $subCategoria.append(tpl3);
+
+                       }
+
+                   }
+               }
+
+
+               $accordion.accordion({
+                   heightStyle: "fill"
+               });
+
+               $(".categoriaAccordion").accordion({
+                   collapsible:true,
+                   active: false,
+                   heightStyle: "content"
+               });
+
+               __setItemClickedListener();
 
            });
 
-            var categorie=data.categorie;
-            var $accordion=$('.deviceAccordion');
 
-
-            for (var i=0; i<categorie.length;i++)
-            {
-                var dataCategoria={
-                    nomeCategoria:categorie[i].nomeCategoria,
-                    idCategoria:categorie[i].idCategoria,
-                };
-
-                var tpl = Mustache.to_html(__categorieTpl[0], dataCategoria);
-                $accordion.append(tpl);
-
-                var $categoria=$accordion.find('.'+categorie[i].idCategoria)
-
-                for (var j=0;j<categorie[i].sub_categorie.length;j++)
-                {
-
-                    var subCategorie=categorie[i].sub_categorie[j];
-                    var dataSubCategoria={
-                        nomeSubCategoria:subCategorie.nomeSubCategoria,
-                        idSubCategoria:subCategorie.idSubCategoria
-                    }
-                    var tpl2=Mustache.to_html(__subCategorieTpl[0], dataSubCategoria);
-                    $categoria.append(tpl2);
-                    var $subCategoria=$categoria.find('.'+subCategorie.idSubCategoria);
-
-                    for (var y=0;y<subCategorie.content_subCategoria.length;y++)
-                    {
-                        var contentSubCategoria=subCategorie.content_subCategoria[y];
-                        var dataContentSubCategoria={
-                            nomeDevice:contentSubCategoria.nomeDevice,
-                            deviceImg:contentSubCategoria.imgDevice
-                        };
-                        var tpl3=Mustache.to_html(__contentSubCategorieTpl[0], dataContentSubCategoria);
-                        $subCategoria.append(tpl3);
-
-                    }
-
-                }
-            }
-
-
-            $accordion.accordion({
-                heightStyle: "fill"
-            });
-
-            $(".categoriaAccordion").accordion({
-                collapsible:true,
-                active: false,
-                heightStyle: "content"
-            });
-
-            __setItemClickedListener();
 
 
 
